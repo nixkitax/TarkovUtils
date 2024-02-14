@@ -31,7 +31,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="bg-white">
+    <header className="bg-white mb-16">
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
           <a href="/" className="-m-1.5 p-1.5">
@@ -101,7 +101,7 @@ export default function Header() {
             </Transition>
           </Popover>
 
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          <a href="/Maps" className="text-sm font-semibold leading-6 text-gray-900">
             <span className='text-xl'> Maps </span>
           </a>
           <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
@@ -164,7 +164,7 @@ export default function Header() {
                   )}
                 </Disclosure>
                 <a
-                  href="#"
+                  href="/Maps"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Maps

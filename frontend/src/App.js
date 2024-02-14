@@ -1,14 +1,20 @@
-import "./App.css";
-import Header from "./components/Header";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from "./components/Home";
+import Maps from "./components/Maps";
+import Layout from "./Layout";
 
 function App() {
   return (
     <div className="App">
-      <div>
-        <Header />
-        <h1 className="text-2xl">Benvenuto su My App!</h1>
-        <p>Benvenuto nella mia applicazione React.</p>
-      </div>
+      <Layout>
+        <Router>
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/maps" element={<Maps />} />
+          </Routes>
+        </Router>
+      </Layout>
     </div>
   );
 }
