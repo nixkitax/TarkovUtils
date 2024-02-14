@@ -1,12 +1,14 @@
 import React from "react";
 import Header from "./components/Header";
+import Container from "./components/Container";
 
 function Layout({ children }) {
   return (
     <div>
       <Header />
+
       <main>
-        <div className="ml-96 mr-60">{children}</div>
+        <Container>{children}</Container>
       </main>
     </div>
   );
