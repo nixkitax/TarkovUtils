@@ -31,12 +31,14 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="bg-white mb-16 fixed top-0 left-0 right-0 z-50">
+    <header className="bg-white mb-16 sticky top-0 left-0 right-0 z-50">
+      <div className=" mt-4 flex justify-center">
+        <CurrencyRupeeIcon className="h-20 w-20" aria-hidden="true" />
+      </div>
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
           <a href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Nixkita</span>
-            <CurrencyRupeeIcon className="h-20 w-20" aria-hidden="true" />
           </a>
         </div>
         <div className="flex lg:hidden">

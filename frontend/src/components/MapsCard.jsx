@@ -1,33 +1,39 @@
 import React from 'react';
+import Image from './Image'
 
-// Componente per il pulsante
 const Button = ({ href, children }) => {
     return (
-        <a href={href} className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4">
+        <a href={href} className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-3 px-6 w-fit">
             {children}
         </a>
     );
 }
 
-const MapsCard = ({ name, id, link_2d, link_3d, link_interactive }) => {
+const MapsCard = ({ name, id, description, link_2d, link_3d, link_interactive, img }) => {
     return (
-        <div className="bg-white border-2 rounded-lg p-4 w-full flex flex-row justify-between">
-            <div>
-                <h2 className="text-xl font-bold">{name}</h2>
-                <p className="text-gray-600 text-xs">ID: {id}</p>
+        <div className="bg-white rounded-lg p-4 flex flex-row w-full gap-10">
+            <div className="flex flex-col w-1/2 self-center">
+                <h1 className="text-xl font-bold mb-1">
+                    {name}
+                </h1>
+                <h2 className="text-s font-light mb-3">
+                    [ID: {id}]
+                </h2>
+                <span className="mb-8">
+                    {description}
+                </span>
+                {link_2d && (
+                    <a href={link_2d} className="text-blue-500 hover:underline">2D map </a>
+                )}
+                {link_3d && (
+                    <a href={link_3d} className="text-blue-500 hover:underline">3D map </a>
+                )}
+                {link_interactive && (
+                    <a href={link_interactive} className="text-blue-500 hover:underline">Interactive Map </a>
+                )}
             </div>
-            <div className="flex flex-row mt-2">
-                <div className="inline-flex">
-                    {link_2d && (
-                        <Button href={link_2d}>2D map</Button>
-                    )}
-                    {link_3d && (
-                        <Button href={link_3d}>3D map</Button>
-                    )}
-                    {link_interactive && (
-                        <Button href={link_interactive}>Interactive map</Button>
-                    )}
-                </div>
+            <div className=" ml-32 flex justify-center items-center w-1/2">
+                <Image img={img} />
             </div>
         </div>
     );
