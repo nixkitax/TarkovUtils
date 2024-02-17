@@ -1,15 +1,7 @@
 import React from 'react';
-import Image from './Image'
 
-const Button = ({ href, children }) => {
-    return (
-        <a href={href} className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-3 px-6 w-fit">
-            {children}
-        </a>
-    );
-}
 
-const MapsCard = ({ name, id, description, link_2d, link_3d, link_interactive, img }) => {
+const MapsCard = ({ name, id, description, link_2d, link_3d, link_interactive, imgSrc }) => {
     return (
         <div className="bg-white rounded-lg p-4 flex flex-row w-full gap-10">
             <div className="flex flex-col w-1/2 self-center">
@@ -33,7 +25,8 @@ const MapsCard = ({ name, id, description, link_2d, link_3d, link_interactive, i
                 )}
             </div>
             <div className=" ml-32 flex justify-center items-center w-1/2">
-                <Image img={img} />
+                {console.log(imgSrc)}
+                <img src={imgSrc} alt="" className='w-full object-cover h-60 rounded-xl' />
             </div>
         </div>
     );

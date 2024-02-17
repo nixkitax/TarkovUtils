@@ -1,37 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import TypeWriter from 'typewriter-effect';
+import React from 'react';
 
-const HomePage = () => {
-    const [showText, setShowText] = useState(false);
-
-    useEffect(() => {
-        // Add a delay before showing the text
-        const timer = setTimeout(() => {
-            setShowText(true);
-        }, 1000);
-
-        return () => clearTimeout(timer);
-    }, []);
-
+const Home = () => {
     return (
-        <div className="flex text-6xl justify-center items-center  ">
-            {showText && (
-                <TypeWriter
-                    onInit={(typewriter) => {
-                        typewriter
-                            .typeString(
-                                'Welcome to Tarkov Tools, a site with useful tools for your raids! :)',
-                            )
-                            .start();
-                    }}
-                    options={{
-                        delay: 75,
-                    }}
-                />
-
-            )}
+        <div className="bg-white py-10 px-10 rounded-xl shadow-xl mt-10">
+            <div className='text-black'>
+                <h1 className='text-xl font-bold mb-3'> A lot of utils stuff for Tarkov</h1>
+                <h1 className='text-5xl font-bold'> TarkovsUtils </h1>
+            </div>
         </div>
-    );
+    )
 }
 
-export default HomePage;
+export default Home
