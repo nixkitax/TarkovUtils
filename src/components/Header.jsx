@@ -11,6 +11,14 @@ import {
   CurrencyRupeeIcon
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
+import Logo from './Logo'
+const Equip = [
+  { name: 'escapefromtarkov', description: 'escapefromtarkov.fandom.com', href: '', icon: ChartPieIcon },
+  { name: 'tarkov.dev', description: 'Doc of tarkorv\'s Api', href: 'https://tarkov.dev/api/', icon: CursorArrowRaysIcon },
+  { name: 'Tarkov\'s API playground', description: 'Come here to test Tarkov\'s API', href: 'https://api.tarkov.dev/', icon: FingerPrintIcon },
+  { name: 'GraphQL Foundation Resources', description: 'Doc of GraphQL', href: 'https://graphql.org/learn/', icon: SquaresPlusIcon },
+  { name: 'Tarkov Changes', description: 'Patches of Tarkov', href: 'https://tarkov-changes.com/', icon: ArrowPathIcon },
+]
 
 const products = [
   { name: 'escapefromtarkov', description: 'escapefromtarkov.fandom.com', href: 'https://escapefromtarkov.fandom.com/wiki/Escape_from_Tarkov_Wiki', icon: ChartPieIcon },
@@ -31,32 +39,82 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="bg-white flex flex-row lg:flex-col items-center justify-between pb-7 sticky top-0 left-0 right-0 z-50">
-      <div className="flex md:ml-10 sm:ml-10 md:mt-10 sm:mt-10 ">
+    <header className=" flex flex-row items-center justify-between pb-7  top-0 left-0 right-0 z-50 ">
+      <div className=' ml-4 mt-4'>
         <a href="/">
-          <CurrencyRupeeIcon className="h-20 w-20" aria-hidden="true" />
+          <Logo />
         </a>
       </div>
-      <nav className=" flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+      <nav className=" flex max-w-7xl p-6 lg:px-8 mr-10 mt-8" aria-label="Global">
         <div className="flex lg:flex-1">
           <a href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Nixkita</span>
           </a>
         </div>
-        <div className="flex lg:hidden">
+        <div className="flex lg:hidden ">
           <button
             type="button"
             className=" w-fit inline-flex  rounded-md p-2.5 text-gray-700 ml-auto"
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
-            <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+            <Bars3Icon className="h-10 w-10 text-white" aria-hidden="true" />
           </button>
         </div>
-        <Popover.Group className="hidden lg:flex lg:gap-x-12">
+        <Popover.Group className="hidden lg:flex lg:gap-x-12 ">
           <Popover className="relative">
             <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
-              <span className='text-xl'> Wiki </span>
+              <span className='text-xl text-white'> Wiki </span>
+              <ChevronDownIcon className="h-7 w-7 flex-none text-gray-400" aria-hidden="true" />
+            </Popover.Button>
+
+            <Transition
+              as={Fragment}
+              enter="transition ease-out duration-200"
+              enterFrom="opacity-0 translate-y-1"
+              enterTo="opacity-100 translate-y-0"
+              leave="transition ease-in duration-150"
+              leaveFrom="opacity-100 translate-y-0"
+              leaveTo="opacity-0 translate-y-1"
+            >
+              <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
+                <div className="p-4 ">
+                  {products.map((item) => (
+                    <div
+                      key={item.name}
+                      className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50 text-white"
+                    >
+                      <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                        <item.icon className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" aria-hidden="true" />
+                      </div>
+                      <div className="flex-auto">
+                        <a href={item.href} className="block font-semibold text-gray-900">
+                          {item.name}
+                          <span className="absolute inset-0" />
+                        </a>
+                        <p className="mt-1 text-gray-600">{item.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
+                  {callsToAction.map((item) => (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
+                    >
+                      <item.icon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
+                      {item.name}
+                    </a>
+                  ))}
+                </div>
+              </Popover.Panel>
+            </Transition>
+          </Popover>
+          <Popover className="relative">
+            <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
+              <span className='text-xl text-white'> Equip </span>
               <ChevronDownIcon className="h-7 w-7 flex-none text-gray-400" aria-hidden="true" />
             </Popover.Button>
 
@@ -71,7 +129,8 @@ export default function Header() {
             >
               <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
                 <div className="p-4">
-                  {products.map((item) => (
+
+                  {Equip.map((item) => (
                     <div
                       key={item.name}
                       className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
@@ -105,17 +164,15 @@ export default function Header() {
             </Transition>
           </Popover>
 
-          <a href="/Maps" className="text-sm font-semibold leading-6 text-gray-900">
-            <span className='text-xl'> Maps </span>
+
+          <a href="/Task" className="text-sm font-semibold leading-6 text-gray-900">
+            <span className='text-xl text-white'> Tasks </span>
           </a>
           <a href="https://tarkov-market.com/" className="text-sm font-semibold leading-6 text-gray-900">
-            <span className='text-xl'> Marketplace </span>
-          </a>
-          <a href="https://main--nixkita.netlify.app" className="text-sm font-semibold leading-6 text-gray-900">
-            <span className='text-xl'> whoami </span>
+            <span className='text-xl text-white'> Marketplace </span>
           </a>
           <a href="/Login" className="text-sm font-semibold leading-6 text-gray-900">
-            <span className='text-xl'> Log in </span>
+            <span className='text-xl text-white'> Log in </span>
           </a>
         </Popover.Group>
       </nav>
@@ -130,11 +187,11 @@ export default function Header() {
             </a>
             <button
               type="button"
-              className="-m-2.5 rounded-md p-2.5 text-gray-700"
+              className="-m-2.5 rounded-md p-2.5 text-white"
               onClick={() => setMobileMenuOpen(false)}
             >
               <span className="sr-only">Close menu</span>
-              <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+              <XMarkIcon className="h-6 w-6 text-black" aria-hidden="true" />
             </button>
           </div>
           <div className="mt-6 flow-root">
@@ -196,8 +253,7 @@ export default function Header() {
           </div>
         </Dialog.Panel>
       </Dialog>
-
-    </header>
+    </header >
 
   )
 }

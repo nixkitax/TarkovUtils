@@ -1,0 +1,19 @@
+{
+	"geolocation": {
+		"data": {
+			"city": "Brasov",
+			"country": {
+				"code": "RO",
+				"name": "Romania"
+			},
+			"subdivision": {
+				"code": "BV",
+				"name": "Brașov County"
+			},
+			"timezone": "Europe/Bucharest",
+			"latitude": 45.6524,
+			"longitude": 25.6109
+		},
+		"timestamp": 1708294834399
+	}
+}

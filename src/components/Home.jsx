@@ -108,7 +108,10 @@ const Home = () => {
                 <h1 className='text-xl font-bold mb-3'> A lot of useful stuff for Tarkov</h1>
                 <h1 className='text-5xl font-bold'> TarkovsUtils </h1>
             </div>
-            <div className="flex flex-wrap justify-center items-center mt-10">
+            <div className='mt-10 text-2xl'>
+                Quick Access for maps
+            </div>
+            <div className="flex flex-wrap justify-center items-center mt-4">
                 {mapsData.map(map => (
                     <Card
                         key={map.id}

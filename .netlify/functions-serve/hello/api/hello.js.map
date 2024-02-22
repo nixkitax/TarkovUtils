@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "sources": ["../../../../../../Users/nicolemanuele/dev/github/TarkovUtils/frontend/api/hello.mjs"],
+  "sourceRoot": "/var/folders/m1/lnh2wk9x0nl19k8dq43kk93c0000gn/T/tmp-16938-eUMTvbywgkRU",
+  "sourcesContent": ["const handler = async (event, context) => {\n  return {\n    statusCode: 400,\n    body: \"fanculo sta merda\",\n  };\n};\n\nexport { handler };\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,IAAM,UAAU,OAAO,OAAO,YAAY;AACxC,SAAO;AAAA,IACL,YAAY;AAAA,IACZ,MAAM;AAAA,EACR;AACF;",
+  "names": []
+}
