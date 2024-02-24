@@ -42,7 +42,7 @@ const Card = ({ name, link_2d, link_3d, link_interactive, imgSrc }) => {
                     )}
                 </div>
             </div>
-            <span className=' font-semibold'> {name}</span>
+            <span className=' font-semibold text-white'> {name}</span>
         </div>
     );
 };

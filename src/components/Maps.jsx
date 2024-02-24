@@ -1,5 +1,4 @@
 import React from 'react'
-import MapsCard from './MapsCard'
 import FactoryImage from '../Images/maps/factory-img.png'
 import GroundZeroImage from '../Images/maps/ground-zero-img.png'
 import TheLabImage from '../Images/maps/the-lab-img.png'
@@ -10,9 +9,15 @@ import ReserveImage from '../Images/maps/reserve-img.png'
 import ShorelineImage from '../Images/maps/shoreline-img.png'
 import LighthouseImage from '../Images/maps/lighthouse-img.png'
 import WoodsImage from '../Images/maps/woods-img.png'
-
+import Card from './Card'
+import { useEffect } from 'react'
 const Maps = () => {
-
+    useEffect(() => {
+        document.body.style.overflow = "hidden";
+        return () => {
+            document.body.style.overflow = "scroll"
+        };
+    }, []);
     const mapsData = [
         {
             id: "55fa2d3fd4bdc2d5f408b4567",
@@ -104,23 +109,49 @@ const Maps = () => {
     ];
 
     return (
-        <div className="bg-white py-10 px-10 rounded-xl shadow-xl mt-10">
-            <h1 className="text-6xl font-bold flex  justify-center items-center mb-8">Maps</h1>
-            <div className="flex flex-col space-y-4">
+
+        <div className=" py-10 px-10 rounded-xl shadow-xl mt-10 flex justify-center items-center flex-col backdrop-saturate-200 "
+            style={{
+                background:
+                    "linear-gradient(to top right, rgba(125,125,125,.01), rgba(6,13,12,.95))",
+            }}>
+            < div className='text-white justify-center items-center flex flex-col' >
+                <h1 className='text-5xl '> Tarkov Tools </h1>
+                <div className="flex items-center py-4 rounded-lg bg-customBlue relative overflow-hidden mt-10">
+                    <div className="absolute left-0 top-0 bottom-0 w-3 bg-grayweird"></div>
+                    <div className=' ml-28'>
+                        <h2 className="text-xl font-semibold mb-2">Titolo della sezione</h2>
+                        <p className="">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel turpis
+                            vitae ante cursus pulvinar. Cras euismod metus eu orci scelerisque, sit amet
+                            feugiat lectus volutpat. Donec euismod massa eu urna faucibus, vel cursus
+                            nulla blandit. Nunc nec diam nec orci rutrum lobortis vel ac dolor.
+                        </p>
+                    </div>
+                </div>
+                <span className='text-4xl mt-16'>MAPS</span>
+            </div >
+
+
+
+
+
+
+
+            <div className="flex flex-wrap justify-center items-center mt-4">
                 {mapsData.map(map => (
-                    <MapsCard
+                    <Card
                         key={map.id}
                         name={map.name}
                         link_2d={map.link_2d}
                         link_3d={map.link_3d}
                         link_interactive={map.link_interactive}
-                        description={map.description}
                         imgSrc={map.imgSrc}
                     />
                 ))}
             </div>
-        </div>
-    );
+        </div >
+    )
 }
 
 export default Maps 
