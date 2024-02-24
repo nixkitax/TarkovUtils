@@ -2,7 +2,6 @@ import React from "react";
 import Header from "./components/Header";
 import Container from "./components/Container";
 import backgroundImage from "./Images/maps/wallpaper.jpg";
-import Blur from "react-blur";
 
 function Layout({ children }) {
   return (
@@ -18,7 +17,14 @@ function Layout({ children }) {
     >
       <Header />
 
-      <main className="h-full">
+      <main
+        className="h-full"
+        style={{
+          background:
+            "linear-gradient(to top right, rgba(125,125,125,.01), rgba(6,13,12,.95))",
+          overflowY: "auto",
+        }}
+      >
         <Container>{children}</Container>
       </main>
     </div>

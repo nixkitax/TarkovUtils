@@ -29,7 +29,7 @@ const Card = ({ name, link_2d, link_3d, link_interactive, imgSrc }) => {
                                 )}
                                 {link_3d && (
                                     <button className="bg-black text-white  font-semibold hover:text-black hover:bg-white mx-2 py-2 px-4 border border-black hover:border-transparent rounded">
-                                        <a href={link_2d} >3D map</a>
+                                        <a href={link_3d} >3D map</a>
                                     </button>
                                 )}
                                 {link_interactive && (
