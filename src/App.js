@@ -5,6 +5,7 @@ import Maps from "./components/Maps";
 import Layout from "./Layout";
 import Login from "./components/Login";
 import Task from "./components/Task";
+import MapDescription from "./components/MapDescription";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/maps" element={<Maps />} />
+            <Route path="/map/:id" element={<MapDescription />} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/task" element={<Task />} />
           </Routes>
@@ -23,4 +25,4 @@ function App() {
   );
 }
 
-export default App;
+export default App; // Esporta App come esportazione predefinita

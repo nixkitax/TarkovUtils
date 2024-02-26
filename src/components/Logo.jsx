@@ -4,7 +4,7 @@ import LogoSrc from "../Images/logo.png"
 const Logo = () => {
     return (
         <div >
-            <img src={LogoSrc} className=' w-32' alt="Logo" />
+            <img src={LogoSrc} className=' w-24' alt="Logo" />
         </div>
     )
 }

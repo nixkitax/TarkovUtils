@@ -12,6 +12,7 @@ import {
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 import Logo from './Logo'
+
 const Equip = [
   { name: 'escapefromtarkov', description: 'escapefromtarkov.fandom.com', href: '', icon: ChartPieIcon },
   { name: 'tarkov.dev', description: 'Doc of tarkorv\'s Api', href: 'https://tarkov.dev/api/', icon: CursorArrowRaysIcon },
@@ -39,7 +40,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className=" flex flex-row items-center justify-between pb-7  top-0 left-0 right-0 z-50 border-2 border-yellow-200/35"
+    <header className=" flex flex-row max-h-32 items-center justify-between pb-7  top-0 left-0 right-0 z-50 border-2 border-yellow-200/35"
       style={{ background: 'linear-gradient(to top right, rgba(45,45,35,.75), rgba(6,13,12,.95))' }}>
       <div className=' ml-4 mt-4'>
         <a href="/">

@@ -1,19 +1,19 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Tarkools",
+  "name": "Small site with a lot of utilities for Tarkov!",
   "icons": [
     {
-      "src": "",
+      "src": "/Images/64x64.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "",
+      "src": "/Images/192x192.ico",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "",
+      "src": "/Images/500x500.ico",
       "type": "image/png",
       "sizes": "512x512"
     }
