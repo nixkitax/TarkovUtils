@@ -4,6 +4,7 @@ import mapsData from './json/mapsData.json';
 import { Link } from 'react-router-dom';
 import { getImageSrc } from '../utils/imageHelper';
 import { ArrowUpRightIcon, MapIcon } from '@heroicons/react/24/outline'
+import { ArrowRightIcon } from '@heroicons/react/24/outline';
 
 const Maps = () => {
     const [isOverflowing, setIsOverflowing] = useState(false);
@@ -27,12 +28,13 @@ const Maps = () => {
     }, []);
 
     return (
-        <div className="mt-10 px-10 rounded-xl shadow-xl mt- flex justify-center items-center flex-col backdrop-saturate-200 no-scrollbar"
+        <div className="mt-10 px-10 rounded-xl shadow-xl  flex-col backdrop-saturate-200 no-scrollbar"
             style={{
                 background:
                     "linear-gradient(to top right, rgba(125,125,125,.01), rgba(6,13,12,.95))",
                 overflowY: isOverflowing ? 'scroll' : 'hidden' // Abilita lo scrolling verticale solo se c'è overflow
             }}>
+            <div className='flex flex-row text-white ml-3 mt-4 text-xs'>[<a href="/" className='hover:underline mr-1'>Home</a><ArrowRightIcon className='w-3 mr-1' /><a href="/Maps" className='hover:underline ml-0'>Maps</a>]</div>
             <div className='mt-10 text-white justify-center items-center flex flex-col'>
                 <h1 className='text-5xl'>Tarkov Tools</h1>
                 <div className="flex items-center py-4 rounded-lg bg-customBlue relative overflow-hidden mt-10">
@@ -41,10 +43,7 @@ const Maps = () => {
                     <div className=' ml-8'>
                         <h2 className="text-xl font-semibold mb-2">Maps Section</h2>
                         <p className="mr-10">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel turpis
-                            vitae ante cursus pulvinar. Cras euismod metus eu orci scelerisque, sit amet
-                            feugiat lectus volutpat. Donec euismod massa eu urna faucibus, vel cursus
-                            nulla blandit. Nunc nec diam nec orci rutrum lobortis vel ac dolor.
+                            The map of Escape from Tarkov consists of 11 different locations of which 10 have been released so far. While all maps are to be connected eventually, for now they are all separated from each other.
                         </p>
                     </div>
                 </div>

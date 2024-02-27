@@ -14,7 +14,11 @@ function App() {
       <Helmet>
         <meta charSet="utf-8" />
         <title>Tarkools </title>
-        <link rel="icon" type="image/x-icon" href="Images/favicon.ico" />
+        <link
+          rel="icon"
+          type="image/x-icon"
+          href="../public/Images/favicon.ico"
+        />
       </Helmet>
       <Layout>
         <Router>
