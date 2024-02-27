@@ -5,7 +5,7 @@ import LighthouseImage from "../Images/maps/lighthouse-img.png";
 import ShorelineImage from "../Images/maps/shoreline-img.png";
 import ReserveImage from "../Images/maps/reserve-img.png";
 import InterchangeImage from "../Images/maps/interchange-img.png";
-import StreetsImage from "../Images/maps/streets-img.png";
+import StreetsImage from "../Images/maps/streets-of-tarkov-img.png";
 import TheLabImage from "../Images/maps/the-lab-img.png";
 import GroundZeroImage from "../Images/maps/ground-zero-img.png";
 
@@ -25,7 +25,7 @@ const getImageSrc = (imgSrc) => {
       return ReserveImage;
     case "../Images/maps/interchange-img.png":
       return InterchangeImage;
-    case "../Images/maps/streets-img.png":
+    case "../Images/maps/streets-of-tarkov-img.png":
       return StreetsImage;
     case "../Images/maps/the-lab-img.png":
       return TheLabImage;

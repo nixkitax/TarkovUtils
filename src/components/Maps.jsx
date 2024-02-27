@@ -3,7 +3,7 @@ import Card from './Card';
 import mapsData from './json/mapsData.json';
 import { Link } from 'react-router-dom';
 import { getImageSrc } from '../utils/imageHelper';
-import { ArrowUpRightIcon } from '@heroicons/react/24/outline'
+import { ArrowUpRightIcon, MapIcon } from '@heroicons/react/24/outline'
 
 const Maps = () => {
     const [isOverflowing, setIsOverflowing] = useState(false);
@@ -37,8 +37,9 @@ const Maps = () => {
                 <h1 className='text-5xl'>Tarkov Tools</h1>
                 <div className="flex items-center py-4 rounded-lg bg-customBlue relative overflow-hidden mt-10">
                     <div className="absolute left-0 top-0 bottom-0 w-3 bg-grayweird"></div>
-                    <div className=' ml-28'>
-                        <h2 className="text-xl font-semibold mb-2">Titolo della sezione</h2>
+                    <MapIcon className=' w-24 ml-10' />
+                    <div className=' ml-8'>
+                        <h2 className="text-xl font-semibold mb-2">Maps Section</h2>
                         <p className="mr-10">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel turpis
                             vitae ante cursus pulvinar. Cras euismod metus eu orci scelerisque, sit amet

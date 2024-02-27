@@ -6,7 +6,7 @@ const Card = ({ name, link_2d, link_3d, link_interactive, imgSrc }) => {
     return (
         <div className='flex justify-center items-center flex-col my-3 mx-3'>
             <div
-                className="relative w-64 h-40 bg-cover bg-center cursor-pointer overflow-hidden mx-3 my-1 rounded-xl  "
+                className="relative w-64 h-40 bg-cover bg-center cursor-pointer overflow-hidden mx-3 my-1 rounded-xl"
                 onMouseEnter={() => setHovered(true)}
                 onMouseLeave={() => setHovered(false)}
             >
@@ -14,27 +14,32 @@ const Card = ({ name, link_2d, link_3d, link_interactive, imgSrc }) => {
                     <img
                         src={imgSrc}
                         alt="Card background"
-                        className={`w-full h-full object-cover transition-opacity ${hovered ? 'brightness-75' : 'brightness-100'}`}
+                        className={`transition-opacity ${hovered ? 'brightness-50' : 'brightness-100'}`}
+                        style={{
+                            maxWidth: '100%',
+                            maxHeight: '100%',
+                            objectFit: 'cover',
+                        }}
                     />
                 )}
 
                 <div className="">
                     {hovered && (
-                        <div className="absolute inset-0 flex justify-center items-center">
-                            <div className="space-y-2 text-center">
+                        <div className="absolute bottom-0 left-0 right-0 flex justify-center mb-3">
+                            <div className="space-x-2 text-center mb-5">
                                 {link_2d && (
-                                    <button className="bg-black text-white  font-semibold hover:text-black hover:bg-white mx-2 py-2 px-4 border border-black hover:border-transparent rounded">
+                                    <button className="bg-black text-white font-semibold hover:text-black hover:bg-white py-2 px-4 border border-black hover:border-transparent rounded mr-3">
                                         <a href={link_2d}>2D map</a>
                                     </button>
                                 )}
                                 {link_3d && (
-                                    <button className="bg-black text-white  font-semibold hover:text-black hover:bg-white mx-2 py-2 px-4 border border-black hover:border-transparent rounded">
-                                        <a href={link_3d} >3D map</a>
+                                    <button className="bg-black text-white font-semibold hover:text-black hover:bg-white py-2 px-4 border border-black hover:border-transparent rounded mr-3">
+                                        <a href={link_3d}>3D map</a>
                                     </button>
                                 )}
                                 {link_interactive && (
-                                    <button className="bg-black text-white  font-semibold hover:text-black hover:bg-white mx-2 py-2 px-4 border border-black hover:border-transparent rounded ">
-                                        <a href={link_interactive} >Interactive Map</a>
+                                    <button className="bg-black text-white font-semibold hover:text-black hover:bg-white my-2 px-4 border border-black hover:border-transparent rounded mr-3">
+                                        <a href={link_interactive}>Interactive Map</a>
                                     </button>
                                 )}
                             </div>
@@ -42,7 +47,9 @@ const Card = ({ name, link_2d, link_3d, link_interactive, imgSrc }) => {
                     )}
                 </div>
             </div>
-            <span className=' font-semibold text-white'> {name}</span>
+            <div className="text-center">
+                <span className='font-semibold text-white'>{name}</span>
+            </div>
         </div>
     );
 };
