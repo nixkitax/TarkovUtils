@@ -6,10 +6,16 @@ import Layout from "./Layout";
 import Login from "./components/Login";
 import Task from "./components/Task";
 import MapDescription from "./components/MapDescription";
+import { Helmet } from "react-helmet";
 
 function App() {
   return (
     <div className="App">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Tarkools </title>
+        <link rel="icon" type="image/x-icon" href="Images/favicon.ico" />
+      </Helmet>
       <Layout>
         <Router>
           <Routes>
