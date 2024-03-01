@@ -10,6 +10,7 @@ module.exports = withMT({
         grayweird: "#777e82",
       },
     },
+    fontFamily: {},
   },
   plugins: [],
 });

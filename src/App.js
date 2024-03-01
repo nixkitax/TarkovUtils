@@ -7,6 +7,7 @@ import Login from "./components/Login";
 import Task from "./components/Task";
 import MapDescription from "./components/MapDescription";
 import { Helmet } from "react-helmet";
+import Item from "./components/Item";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="/map/:id" element={<MapDescription />} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/task" element={<Task />} />
+            <Route exact path="/item" element={<Item />} />
           </Routes>
         </Router>
       </Layout>
