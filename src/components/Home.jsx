@@ -21,7 +21,7 @@ const Home = () => {
                         Your browser does not support the video tag.
                     </video>
                 </div>
-                <div className='flex flex-col justify-center items-center w-full z-10 -mt-44'>
+                <div className='flex flex-col justify-center items-center w-full z-10 -mt-64'>
                     <h1 className='text-6xl text-white font-extrabold mb-10'> tarkools </h1>
                     <div className='flex flex-col'>
                         <span className='text-5xl text-white hover:bg-white hover:text-black hover:cursor-pointer transition-colors duration-300'>
@@ -35,13 +35,14 @@ const Home = () => {
                         </span>
                         <div className='text-5xl text-white hover:bg-white hover:text-black hover:cursor-pointer transition-colors duration-300'>
                             <span className=' w-full hover:cursor-pointer'>
-                                - quests
+                                <a href="/tasks" className="animate-fade-in">- tasks</a>
                             </span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
     )
 }
 

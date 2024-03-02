@@ -28,7 +28,7 @@ const Maps = () => {
     }, []);
 
     return (
-        <div className="mt-10 px-10 rounded-xl shadow-xl  flex-col backdrop-saturate-200 no-scrollbar"
+        <div className="mt-10 px-10 rounded-xl shadow-xl  flex-col backdrop-saturate-200 no-scrollbar lg:mb-32"
             style={{
                 background:
                     "linear-gradient(to top right, rgba(125,125,125,.01), rgba(6,13,12,.95))",

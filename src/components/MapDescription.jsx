@@ -12,7 +12,7 @@ const MapDescription = () => {
     const { id } = useParams();
     const { loading, error, data } = useQuery(GET_MAPS);
 
-    if (loading) return <div className='flex justify-center items-center'> <Spinner className="h-16 w-16 text-gray-500" /> </div>;
+    if (loading) return <div className='flex justify-center items-center'> <Spinner className="h-16 w-16 text-gray-500 justify-center items-center" /> </div>;
     if (error) return <div>Error: {error.message}</div>;
 
     const mapFromQuery = data.maps.find(map => map.id === id);

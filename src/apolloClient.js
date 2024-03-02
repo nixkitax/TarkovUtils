@@ -39,4 +39,32 @@ export const GET_MAPS = gql`
     }
   }
 `;
+
+export const GET_TASKS = gql`
+  query {
+    tasks {
+      name
+      wikiLink
+      objectives {
+        description
+
+        maps {
+          name
+        }
+      }
+      minPlayerLevel
+      map {
+        name
+      }
+      startRewards {
+        items {
+          item {
+            name
+          }
+          count
+        }
+      }
+    }
+  }
+`;
 export default client;

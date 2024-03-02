@@ -8,7 +8,7 @@ import Task from "./components/Task";
 import MapDescription from "./components/MapDescription";
 import { Helmet } from "react-helmet";
 import Item from "./components/Item";
-
+import Footer from "./components/Footer";
 function App() {
   return (
     <div className="App">
@@ -28,9 +28,10 @@ function App() {
             <Route exact path="/maps" element={<Maps />} />
             <Route path="/map/:id" element={<MapDescription />} />
             <Route exact path="/login" element={<Login />} />
-            <Route exact path="/task" element={<Task />} />
+            <Route exact path="/tasks" element={<Task />} />
             <Route exact path="/item" element={<Item />} />
           </Routes>
+          <Footer />
         </Router>
       </Layout>
     </div>
