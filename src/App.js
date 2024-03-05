@@ -9,6 +9,7 @@ import MapDescription from "./components/MapDescription";
 import { Helmet } from "react-helmet";
 import Item from "./components/Item";
 import Footer from "./components/Footer";
+import Loading from "./components/Loading";
 function App() {
   return (
     <div className="App">
@@ -30,6 +31,7 @@ function App() {
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/tasks" element={<Task />} />
             <Route exact path="/item" element={<Item />} />
+            <Route exact path="/loading" element={<Loading />} />
           </Routes>
           <Footer />
         </Router>

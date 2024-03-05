@@ -35,7 +35,7 @@ export default function Header() {
   return (
     <header className="flex flex-row items-center justify-between top-0 left-0 right-0 z-50 border-2 border-yellow-200/35"
       style={{ background: 'linear-gradient(to top right, rgba(45,45,35,.75), rgba(6,13,12,.95))' }}>
-      <div className="ml-4 mt-4">
+      <div className="ml-4 mt-4 mb-2">
         <a href="/">
           <Logo />
         </a>

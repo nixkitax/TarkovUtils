@@ -19,11 +19,11 @@ const Task = () => {
             }}>
             <div className='flex flex-row text-white ml-3 mt-4 text-xs'>[<a href="/" className='hover:underline mr-1'>Home</a><ArrowRightIcon className='w-3 mr-1' /><a href="/Maps" className='hover:underline ml-0'>Maps</a>]</div>
             <div className='mt-10 text-white  flex flex-col'>
-                <span className='text-4xl mt-16'>ITEMS</span>
+                <span className='text-4xl mt-16'> QUESTS </span>
                 <table className="mt-4 border-2">
                     <thead>
-                        <tr>
-                            <th>Name</th>
+                        <tr className="border-2">
+                            <th >Name</th>
                             <th>Wiki Link</th>
                             <th>Objectives</th>
                             <th>Min Player Level</th>
@@ -33,7 +33,7 @@ const Task = () => {
                     </thead>
                     <tbody>
                         {data.tasks.map((task, index) => (
-                            <tr key={index}>
+                            <tr key={index} className="border-2">
                                 <td>{task.name}</td>
                                 <td><a href={task.wikiLink}>{task.wikiLink}</a></td>
                                 <td>
