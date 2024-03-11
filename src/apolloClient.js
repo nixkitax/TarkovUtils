@@ -21,6 +21,7 @@ export const GET_MAPS = gql`
         boss {
           id
           name
+          imagePortraitLink
         }
         spawnChance
         spawnLocations {

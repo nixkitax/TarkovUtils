@@ -25,7 +25,7 @@ const MapDescription = () => {
     if (!map) return <div>Map not found</div>;
 
     return (
-        <div className="mt-10 rounded-xl shadow-xl mt- flex flex-col backdrop-saturate-200 no-scrollbar"
+        <div className="mt-10 rounded-xl shadow-xl mt- flex flex-col backdrop-saturate-200"
             style={{
                 background: "linear-gradient(to top right, rgba(125,125,125,.01), rgba(6,13,12,.95))",
             }}>
@@ -54,7 +54,7 @@ const MapDescription = () => {
                                 )}
 
                             </div>
-                            <div className='mt-10 mr-8'>
+                            <div className='mt-10 mr-8 mb-32'>
                                 <h2 className='text-2xl font-semibold'>Description</h2>
                                 <hr className=" border-white mb-4" />
                                 <p className='mt-2 text-white'>{map.description}</p>
@@ -66,38 +66,57 @@ const MapDescription = () => {
                                     <ul className='mt-4'>
                                         {map.enemies.map((enemy, index) => (
                                             <li key={index}>{enemy}</li>
-                                        ))}                                        <li><span className='font-semibold'>Raid Duration:</span> {map.raidDuration}</li>
-                                        <li><span className='font-semibold'>Players:</span> {map.players}</li>
-                                    </ul>
-                                </div>
-                                <ul>
-                                    <li>Bosses:</li>
-                                    <ul>
-                                        {map.bosses.map(boss => (
-                                            <li key={boss.boss.id}>
-                                                Boss Name: {boss.boss.name}<br />
-                                                Spawn Chance: {boss.spawnChance}<br />
-                                                Spawn Locations: {boss.spawnLocations.map(location => location.name).join(', ')}<br />
-                                                {boss.escorts.map(escort => (
-                                                    <div key={escort.boss.name}>
-                                                        Escort Name: {escort.boss.name}<br />
-                                                        {escort.amount.map((amount, index) => ( // Iterating over the array
-                                                            <div key={index}>
-                                                                Amount: {amount.count}<br />
-                                                                Chance: {amount.chance}
-                                                            </div>
-                                                        ))}
-                                                    </div>
-                                                ))}
-                                            </li>
                                         ))}
                                     </ul>
-                                </ul>
+                                </div>
+                                <div className="relative overflow-x-auto shadow-md mt-6 sm:rounded-lg">
+                                    <h2 className="text-2xl font-semibold">Boss</h2>
+                                    <hr className=" border-white mb-4" />
+
+                                    <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                        <thead className="text-xs text-white uppercase bg-gray-50/40 dark:bg-gray-700 dark:text-gray-400">
+                                            <tr>
+                                                <th scope="col" className="px-6 py-3">
+                                                    Potrait Image
+                                                </th>
+                                                <th scope="col" className="px-6 py-3">
+                                                    Name
+                                                </th>
+                                                <th scope="col" className="px-6 py-3">
+                                                    Locations
+                                                </th>
+                                                <th scope="col" className="px-6 py-3">
+                                                    Escort
+                                                </th>
+                                                <th scope="col" className="px-6 py-3">
+                                                    Wiki
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {map.bosses.map((bossSpawn, index) => (
+                                                <tr key={index} className={index % 2 === 0 ? "   text-white even:dark:bg-gray-800 border-b dark:border-gray-700" : " text-white border-b"}>
+                                                    <td className="px-6 py-4 font-medium text-white whitespace-nowrap dark:text-white">
+                                                        <img src={bossSpawn.boss.imagePortraitLink} className="w-32" alt={bossSpawn.boss.name} />
+                                                    </td>
+                                                    <td className="px-6 py-4">{bossSpawn.boss.name}</td>
+                                                    <td className="px-6 py-4">{bossSpawn.spawnLocations.map(location => location.name).join(', ')}</td>
+                                                    <td className="px-6 py-4">{bossSpawn.escorts.map(escort => escort.boss.name).join(', ')}</td>
+                                                    <td className="px-6 py-4">
+                                                        <a href={bossSpawn.boss.wikiLink} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Wiki</a>
+                                                    </td>
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                </div>
+
+
                             </div>
                         </div>
                     </div>
-                    <div className='mt-40 '>
-                        <table className="border-collapse border border-gray-400">
+                    <div className='mt-40'>
+                        <table className="border border-gray-400">
                             <tr className="border-t border-gray-400">
                                 <td className='flex flex-auto items-center justify-center' >
                                     {map.name}
@@ -105,23 +124,11 @@ const MapDescription = () => {
                             </tr>
                             <tr className="border-t border-gray-400">
                                 <td colSpan="2">
-                                    <img src={getImageSrc(`../Images/maps/${map.normalizedName}-img.png`)} alt={map.name} className=' max-w-96' />
-                                    <span className='text-light text-center justify-center flex'>"ciao" </span>
-                                </td>
-                            </tr>
-                            <tr className="border-t border-gray-400">
-                                <td>
-                                    tupitupi
-                                </td>
-                            </tr>
-                            <tr className="border-t border-gray-400">
-                                <td>
-                                    tapitapi
+                                    <img src={getImageSrc(`../Images/maps/${map.normalizedName}-img.png`)} alt={map.name} className='max-w-96 mx-2 my-2' />
                                 </td>
                             </tr>
                         </table>
                     </div>
-
                 </div>
             </div>
         </div >
